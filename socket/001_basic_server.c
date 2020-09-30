@@ -42,8 +42,8 @@ int main(int argc, char * argv[])
     if (clnt_sock < 0)
         handle_error("Accpet error");
 
-    char *msg = "Hello client!\n";
-    write(clnt_sock, msg, sizeof(msg) * 2);
+    char msg[] = "Hello client!\n";
+    write(clnt_sock, msg, sizeof(msg));
 
     close(clnt_sock);
     close(serv_sock);
